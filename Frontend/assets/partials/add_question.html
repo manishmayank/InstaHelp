@@ -1,0 +1,17 @@
+<br><br>
+<div class="container">
+  <a class="btn btn-lg btn-default" href="#/home">Home</a></br>
+  <h2 style="text-align:center;">Ask a Question</h2>
+  <form class="form-horizontal" role="form">
+    <input ng-model="" id="title" class="form-control" placeholder="Enter Question Title" required=""></br>
+    <textarea ng-model="" id="text" class="form-control" rows="6" placeholder="Please Explain your Question here..." required=""></textarea></br>
+    <div class="form-group row">
+      <div class="col-md-2"><input ng-model="" id="tag1" class="form-control" placeholder="Tag 1"></div>
+      <div class="col-md-2"><input ng-model="" id="tag2" class="form-control" placeholder="Tag 2"></div>
+      <div class="col-md-2"><input ng-model="" id="tag3" class="form-control" placeholder="Tag 3"></div>
+      <div class="col-md-2"><input ng-model="" id="tag4" class="form-control" placeholder="Tag 4"></div>
+    </div>
+    <button ng-click="addQuestion()" class="btn btn-lg btn-primary btn-block" type="button">Submit</button>
+  </form>
+</div>
+<br><br>

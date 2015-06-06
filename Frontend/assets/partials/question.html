@@ -1,0 +1,54 @@
+<br><br>
+<div class="container">
+  <a class="btn btn-lg btn-default" href="#/home">Home</a></br>
+  <h3>Question: {{title}}</h3>
+  <p>{{text}}</p>
+  <p><small>Posted by: {{user}}</small></p>
+  <p><small>Tags:  </small></p>
+  <p ng-repeat="tag in tags"><span><button class="btn btn-default">{{tag.text}}</button></span></p>
+
+  <p>
+    <span style="color:#5cb85c;">{{ upvotes }}</span>
+    <span><button ng-click="upvote()" class="btn btn-success">Upvote</button></span>
+    <span style="color:#d9534f;">{{ downvotes }}</span>
+    <span><button ng-click="downvote()" class="btn btn-danger">Downvote</button></span>
+    at {{created_at | date:'medium' }}
+  </p>
+  <div class="container row pricing">
+    <h6>Comments</h6>
+    <div>
+      <p ng-repeat="comment in comments"><small>{{comment.user}}: {{comment.text}} at {{comment.created_at | date:'medium'}}</small></p>
+    </div>
+
+    <input type="text" class="form-control" placeholder="Comment" />
+    <button class="btn btn-default" type="submit">Post</button>
+
+    <h4>Answers</h4>
+    <div class="container-fluid">
+      <div ng-repeat="answer in answers">
+        <p>{{answer.text}}</p>
+        <p><small>Answered by: {{answer.user_name}}</small></p>
+        <p>
+          <span style="color:#5cb85c;">{{ answer.upvotes }}</span>
+          <span><button ng-click="answer_upvote()" class="btn btn-success">Upvote</button></span>
+          <span style="color:#d9534f;">{{ answer.downvotes }}</span>
+          <span><button ng-click="answer_downvote()" class="btn btn-danger">Downvote</button></span>
+          at {{answer.created_at | date:'medium' }}
+        </p>
+        <h6>Comments</h6>
+        <div class="container">
+            <div>
+              <p ng-repeat="comment in answer.comments"><small>{{comment.user}}: {{comment.text}} at {{comment.created_at | date:'medium'}}</small></p>
+            </div>
+            <input type="text" class="form-control" placeholder="Comment" />
+            <button class="btn btn-default" type="submit">Post</button>
+        </div>
+      </div><br>
+    </div>
+    <form class="form-inline">
+      <textarea rows="4" type="text" class="form-control" placeholder="Write an Answer"></textarea><br>
+      <button class="btn btn-lg btn-primary" type="submit">Post Answer</button>
+    </form>
+  </div>
+</div>
+<br><br>

@@ -1,0 +1,18 @@
+<br><br>
+<div class="container">
+  <div>
+    <span><a class="btn btn-lg btn-primary" href="#/login">Login</a></span>
+    <span><a class="btn btn-lg btn-primary" href="#/signup">Signup</a></span>
+    <span style="float:right;"><a class="btn btn-lg btn-default" href="#/ask_question">Ask a Question</a></span>
+  </div><br>
+
+	<div class="row pricing">
+  	<div class="col-md-3">
+  		<div class="well" ng-repeat="question in questions">
+  			<p><a href="#/question/{{question.id}}">{{question.title}}</a></p>
+        <p><small>{{question.upvotes}} upvotes {{question.downvotes}} downvotes at {{question.created_at | date:'medium'}}</small></p>
+  		</div>
+  	</div>
+  </div>
+</div>
+<br><br>
